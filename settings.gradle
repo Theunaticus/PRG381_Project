@@ -4,4 +4,4 @@ pluginManagement {
 		gradlePluginPortal()
 	}
 }
-rootProject.name = 'accessing-data-mysql'
+rootProject.name = 'prg_project'
