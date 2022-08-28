@@ -18,10 +18,8 @@ public class MainController {
   @Autowired 
   private AdministratorRepository adminRepository;
 
-  @PostMapping(path="/add") // Map ONLY POST Requests
+  @PostMapping(path="/addregister") // Map ONLY POST Requests
   public @ResponseBody String addNewRegister (@RequestParam String name, @RequestParam String address,@RequestParam String email,@RequestParam String password,@RequestParam String course_name) {
-    // @ResponseBody means the returned String is the response, not a view name
-    // @RequestParam means it is a parameter from the GET or POST request
 
     Register n = new Register();
     n.SetName(name);
@@ -32,10 +30,45 @@ public class MainController {
     registerRepository.save(n);
     return "Saved";
   }
+  
+  @PostMapping(path="/addstudent") // Map ONLY POST Requests
+  public @ResponseBody String addNewStudent (@RequestParam String name, @RequestParam String address,@RequestParam String email,@RequestParam String password) {
 
-  @GetMapping(path="/all")
-  public @ResponseBody Iterable<User> getAllUsers() {
-    // This returns a JSON or XML with the users
-    return userRepository.findAll();
+    Student n = new Student();
+    n.SetName(name);
+    n.SetAddress(address);
+    n.SetEmail(email);
+    n.SetPassword(password);
+    studentRepository.save(n);
+    return "Saved";
+  }
+
+  @PostMapping(path="/addadmin") // Map ONLY POST Requests
+  public @ResponseBody String addNewAdmin (@RequestParam String name,@RequestParam String password,@RequestParam String contact) {
+
+    Administrator n = new Administrator();
+    n.SetName(name);
+    n.SetContact(contact);
+    n.SetPassword(password);
+    adminRepository.save(n);
+    return "Saved";
+  }
+
+  @GetMapping(path="/allstudent")
+  public @ResponseBody Iterable<Student> getAllStudents() {
+    // This returns a JSON or XML with the students
+    return studentRepository.findAll();
+  }
+
+  @GetMapping(path="/allregister")
+  public @ResponseBody Iterable<Register> getAllRegisters() {
+    // This returns a JSON or XML with the registers
+    return registerRepository.findAll();
+  }
+
+  @GetMapping(path="/alladmins")
+  public @ResponseBody Iterable<Register> getAllAdmins() {
+    // This returns a JSON or XML with the admins
+    return adminRepository.findAll();
   }
 }
