@@ -15,7 +15,43 @@ public class Student {
     private String student_email;
     private String student_password;
 
-    public Boolean CheckPassword (String Password){
-        return Password==student_password;
+    public  int GetId ()    {
+        return  student_id;
+    }
+
+    public  void    SetId (int _ID)    {
+        student_id  =   _ID;
+    }
+
+    public  String  GetName ()  {
+        return  student_name;
+    }
+
+    public  void  SetName (String _Value){
+        student_name    =   _Value;
+    }
+
+    public  String  GetAddress ()  {
+        return  student_address;
+    }
+
+    public  void  SetAddress (String _Value){
+        student_address    =   _Value;
+    }
+
+    public  String  GetEmail ()  {
+        return  student_email;
+    }
+
+    public  void  SetEmail (String _Value){
+        student_email    =   _Value;
+    }
+
+    public  String  GetPassword ()  {
+        return  student_password;
+    }
+
+    public  void  SetPassword (String _Value){
+        student_password    =   _Value;
     }
 }

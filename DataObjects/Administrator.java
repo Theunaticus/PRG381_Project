@@ -14,24 +14,36 @@ public class Administrator {
     private String password;
     private String contact;
 
-    public  int GetID(){
-            return Admin_id;
+    public  int GetId ()    {
+        return  Admin_id;
     }
 
-    public  void    SetID (int value)    {
-        Admin_id    =   value;
+    public  void    SetId (int _ID)    {
+        Admin_id  =   _ID;
     }
 
     public  String  GetName ()  {
         return  Admin_name;
     }
 
-    public  void SetName (String Name) {
-        Admin_name  =   Name;
+    public  void  SetName (String _Value){
+        Admin_name    =   _Value;
     }
 
-    public  String GetPassword () {
+    public  String  GetPassword ()  {
         return  password;
+    }
+
+    public  void  SetPassword (String _Value){
+        password    =   _Value;
+    }
+
+    public  String  GetContact ()  {
+        return  contact;
+    }
+
+    public  void  SetContact (String _Value){
+        contact    =   _Value;
     }
 
 }
