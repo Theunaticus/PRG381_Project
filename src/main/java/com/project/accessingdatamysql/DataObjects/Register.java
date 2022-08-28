@@ -1,4 +1,4 @@
-package DataObjects;
+package src.main.java.com.example.accessingdatamysql.DataObjects;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -6,21 +6,22 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Student {
+public class Register {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    private int student_id;
+    private int RegisterId;
     private String student_name;
     private String student_address;
     private String student_email;
     private String student_password;
+    private String course_name;
 
     public  int GetId ()    {
-        return  student_id;
+        return  RegisterId;
     }
 
     public  void    SetId (int _ID)    {
-        student_id  =   _ID;
+        RegisterId  =   _ID;
     }
 
     public  String  GetName ()  {
@@ -53,5 +54,13 @@ public class Student {
 
     public  void  SetPassword (String _Value){
         student_password    =   _Value;
+    }
+
+    public  String  GetCourse ()  {
+        return  course_name;
+    }
+
+    public  void  SetCourse (String _Value){
+        course_name    =   _Value;
     }
 }

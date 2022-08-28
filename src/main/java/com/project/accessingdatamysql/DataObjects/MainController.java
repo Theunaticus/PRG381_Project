@@ -1,4 +1,4 @@
-package DataObjects;
+package src.main.java.com.example.accessingdatamysql.DataObjects;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
