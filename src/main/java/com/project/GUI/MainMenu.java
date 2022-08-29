@@ -35,7 +35,7 @@ public class MainMenu extends JFrame {
             this.setVisible(false);
             RegisterView register = new RegisterView();
             register.setVisible(true);
-            // int n = 1;
+
         });
 
         // -------------Exit Panel------------------

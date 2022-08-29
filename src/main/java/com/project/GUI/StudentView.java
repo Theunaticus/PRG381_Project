@@ -76,7 +76,7 @@ public class StudentView extends JFrame {
         editButton.setFont(mainFont);
         editButton.addActionListener(arg0 -> {
             /* Add SQL code to see if the first and last names are inside the database */
-            // int n = 1;
+
         });
         JButton NextButton = new JButton("Next record");
         NextButton.setFont(mainFont);

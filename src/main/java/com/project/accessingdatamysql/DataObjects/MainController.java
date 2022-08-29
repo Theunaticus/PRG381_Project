@@ -1,4 +1,4 @@
-package src.main.java.com.example.accessingdatamysql.DataObjects;
+package com.project.accessingdatamysql.DataObjects;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -9,17 +9,18 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller // This means that this class is a Controller
-@RequestMapping(path="/command") // This means URL's start with /command (after Application path)
+@RequestMapping(path = "/command") // This means URL's start with /command (after Application path)
 public class MainController {
-  @Autowired 
+  @Autowired
   private RegisterRepository registerRepository;
-  @Autowired 
+  @Autowired
   private StudentRepository studentRepository;
-  @Autowired 
+  @Autowired
   private AdministratorRepository adminRepository;
 
-  @PostMapping(path="/addregister") // Map ONLY POST Requests
-  public @ResponseBody String addNewRegister (@RequestParam String name, @RequestParam String address,@RequestParam String email,@RequestParam String password,@RequestParam String course_name) {
+  @PostMapping(path = "/addregister") // Map ONLY POST Requests
+  public @ResponseBody String addNewRegister(@RequestParam String name, @RequestParam String address,
+      @RequestParam String email, @RequestParam String password, @RequestParam String course_name) {
 
     Register n = new Register();
     n.SetName(name);
@@ -30,9 +31,10 @@ public class MainController {
     registerRepository.save(n);
     return "Saved";
   }
-  
-  @PostMapping(path="/addstudent") // Map ONLY POST Requests
-  public @ResponseBody String addNewStudent (@RequestParam String name, @RequestParam String address,@RequestParam String email,@RequestParam String password) {
+
+  @PostMapping(path = "/addstudent") // Map ONLY POST Requests
+  public @ResponseBody String addNewStudent(@RequestParam String name, @RequestParam String address,
+      @RequestParam String email, @RequestParam String password) {
 
     Student n = new Student();
     n.SetName(name);
@@ -43,8 +45,9 @@ public class MainController {
     return "Saved";
   }
 
-  @PostMapping(path="/addadmin") // Map ONLY POST Requests
-  public @ResponseBody String addNewAdmin (@RequestParam String name,@RequestParam String password,@RequestParam String contact) {
+  @PostMapping(path = "/addadmin") // Map ONLY POST Requests
+  public @ResponseBody String addNewAdmin(@RequestParam String name, @RequestParam String password,
+      @RequestParam String contact) {
 
     Administrator n = new Administrator();
     n.SetName(name);
@@ -54,20 +57,20 @@ public class MainController {
     return "Saved";
   }
 
-  @GetMapping(path="/allstudent")
+  @GetMapping(path = "/allstudent")
   public @ResponseBody Iterable<Student> getAllStudents() {
     // This returns a JSON or XML with the students
     return studentRepository.findAll();
   }
 
-  @GetMapping(path="/allregister")
+  @GetMapping(path = "/allregister")
   public @ResponseBody Iterable<Register> getAllRegisters() {
     // This returns a JSON or XML with the registers
     return registerRepository.findAll();
   }
 
-  @GetMapping(path="/alladmins")
-  public @ResponseBody Iterable<Register> getAllAdmins() {
+  @GetMapping(path = "/alladmins")
+  public @ResponseBody Iterable<Administrator> getAllAdmins() {
     // This returns a JSON or XML with the admins
     return adminRepository.findAll();
   }

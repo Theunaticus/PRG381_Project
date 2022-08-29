@@ -1,10 +1,14 @@
 package com.project.GUI;
 
 import javax.swing.JFrame;
+
+import project.accessingdatamysql.DataObjects.*;
+
 import javax.swing.*;
 import java.awt.*;
 
 public class AdminView extends JFrame {
+    Iterable<Administrator> AdminList = new MainController().getAllAdmins();
     final private Font mainFont = new Font("Arial", Font.PLAIN, 20);
     JTextField Admin_IDField = new JTextField("Admin ID");
     JLabel Admin_IDLabel = new JLabel("Admin ID", JLabel.CENTER);
@@ -89,7 +93,7 @@ public class AdminView extends JFrame {
         SearchButton.setFont(mainFont);
         SearchButton.addActionListener(arg0 -> {
             /* Add SQL code to see if the first and last names are inside the database */
-            int n = 1;
+
         });
         JButton MainMenuButton = new JButton("Main Menu");
         MainMenuButton.setFont(mainFont);
@@ -130,6 +134,12 @@ public class AdminView extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         add(MainPanel);
         setVisible(true);
+
+    }
+
+    public static void DisplayFirstRecord() {
+        MainController controller = new MainController();
+        controller.getAllAdmins();
 
     }
 

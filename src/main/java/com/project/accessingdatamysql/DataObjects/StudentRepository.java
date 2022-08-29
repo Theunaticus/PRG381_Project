@@ -1,8 +1,6 @@
-package src.main.java.com.example.accessingdatamysql.DataObjects;
+package com.project.accessingdatamysql.DataObjects;
 
 import org.springframework.data.repository.CrudRepository;
-
-import com.example.accessingdatamysql.User;
 
 // This will be AUTO IMPLEMENTED by Spring into a Bean called studentRepository
 // CRUD refers Create, Read, Update, Delete

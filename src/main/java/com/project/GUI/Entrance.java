@@ -31,7 +31,7 @@ public class Entrance extends JFrame {
         // panel.add(label);
         panel.add(tfFirstName);
         panel.add(tfLastName);
-        // int n = 1;
+
         JButton button = new JButton("Click Me");
         button.setFont(mainFont);
         button.addActionListener(arg0 -> {

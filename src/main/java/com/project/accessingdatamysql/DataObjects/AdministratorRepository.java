@@ -1,4 +1,4 @@
-package src.main.java.com.example.accessingdatamysql.DataObjects;
+package com.project.accessingdatamysql.DataObjects;
 
 import org.springframework.data.repository.CrudRepository;
 
