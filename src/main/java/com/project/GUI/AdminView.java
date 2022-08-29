@@ -1,4 +1,4 @@
-package src.main.java.src.main.java.com.example.accessingdatamysql;
+package com.project.GUI;
 
 import javax.swing.JFrame;
 import javax.swing.*;
